@@ -1,0 +1,31 @@
+<h2>Event Binding</h2>
+
+<button id="id1" (click)="login()">Login</button>
+
+<h4>Cart Count:{{count}}</h4>
+
+<!-- <button (click)="addToCart()">Add To Cart</button> &nbsp;
+<button (click)="removeFromCart()">Remove From Cart</button> -->
+
+<button (click)="performAction('Increment')" class="margin">Add To Cart</button>
+<button (click)="performAction('Decrement')">Remove From Cart</button>
+
+<h1 (mouseover)="print()">Hover Me</h1>
+
+<label for="">First Name</label>
+<input type="text" name="fistName" (change)="firstNameChanged($event)">
+
+
+
+<label for="">Last Name</label>
+<input type="text" name="fistName" (input)="lastNameChanged($event)">
+
+<h6>Entered Name is : {{enterdName}}</h6>
+
+<!--  -->
+<label for="">City Name</label>
+<input type="text" name="city" [value]="cityName" (change)="cityNameChanged($event)" >
+
+
+<label for="">State Name</label>
+<input type="text" name="city" [(ngModel)]="stateName" (change)="printStateName()">

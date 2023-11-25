@@ -1,0 +1,48 @@
+<!-- <h4 class="text-center" appDynamicStyle>Product List</h4> -->
+<h4 class="text-center">Product List</h4>
+<div class="container w-50">
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Search</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" [(ngModel)]="searchText" (ngModelChange)="testPipe()">
+  </div>
+</div>
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Sr No</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr *ngFor="let product of productList;let i=index">
+            <ng-container *ngIf="product.price > 5000">
+              <th scope="row">{{i+1}}</th>
+              <td>{{product.productName}}</td>
+              <td>{{product.price}}</td>
+              <td>{{product.quantity}}</td>
+            </ng-container>
+          </tr> -->
+
+          <!-- [ngClass]="{'bg':i==0,'bg-one':i==1}" -->
+          <!-- [ngClass]="{'bg':o}" -->
+          <!-- [ngClass]="o ? 'bg':'bg-one'" -->
+          <!-- [appMyCustom]="o" -->
+      <tr *ngFor="let product of productList | searchPipe:searchText;let i=index;let o=odd;let e=even"   [ngStyle]="{'background-color': o ? 'red' :'',}">
+        <th scope="row">{{i+1}}</th>
+        <td>{{product.productName | myLowerCase}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.quantity}}</td>
+      </tr>
+      <tr *ngIf="noRecordsFound">
+        <td colspan="4" class="alert alert-danger text-center"> 
+          No Record Found
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- <button type="button" (click)="save()">Save</button> -->

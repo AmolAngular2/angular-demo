@@ -1,0 +1,47 @@
+<!-- <h3>Data Binding</h3>
+
+<h5>First Name : {{firstName}}</h5>
+<h5>Company Name : {{companyName}}</h5>
+
+<table>
+    <tr>
+        <td>Employee Name</td>
+        <td>{{employeeObj.employeeName}}</td>
+    </tr>
+    <tr>
+        <td>Designation</td>
+        <td>{{employeeObj.designation}}</td>
+    </tr>
+    <tr>
+        <td>Salary</td>
+        <td>{{employeeObj.salary | currency:'INR'}}</td>
+    </tr>
+    <tr>
+        <td>Skills</td>
+        <td>{{employeeObj.skills[0]}},{{employeeObj.skills[1]}}</td>
+    </tr>
+</table>
+
+<br><br>
+<button type="button" [disabled]="isBtnDisabled">Login</button>
+
+<img [src]="imgPath" alt="">
+
+<br>
+<br> -->
+
+<h3>{{message1 | uppercase}}</h3>
+<h3>{{message1 | lowercase}}</h3>
+<h3>{{message1 | titlecase}}</h3>
+
+<h3>Annual Salary {{annualSalary | currency}}</h3>
+<h3>Annual Salary {{annualSalary | currency:'INR'}}</h3>
+<h3>Today's Date: {{todaysDate}}</h3>
+<h3>Todays Date with Pipe: {{todaysDate | date}}</h3>
+<h3>Short Date : {{todaysDate | date:'shortDate'}}</h3>
+<h3>Medium Date : {{todaysDate | date:'mediumDate'}}</h3>
+<h3>Date in dd/mm/yyyy : {{todaysDate | date:'dd/MM/yyyy'}}</h3>
+
+<h3>Total Price:{{totalPrice | number:'.1-2'}}</h3>
+
+<h3>Total Price:{{totalPrice | number:'.1-2'}}</h3>

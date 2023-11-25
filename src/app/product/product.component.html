@@ -1,0 +1,39 @@
+<div class="container home-container border shadow mt-2 p-2">
+    <form>
+        <div class="mb-3">
+            <label for="id1" class="form-label">Product Name</label>
+            <input type="text" class="form-control" id="id1" name="pName" [(ngModel)]="productModal.productName">
+        </div>
+        <div class="mb-3">
+            <label for="id2" class="form-label">Price</label>
+            <input type="text" class="form-control" id="id2" name="price" [(ngModel)]="productModal.price" (ngModelChange)="calculateTotalPrice()">
+        </div>
+        <div class="mb-3">
+            <label for="id3" class="form-label">Quantity</label>
+            <input type="text" class="form-control" id="id3" name="quantity" [(ngModel)]="productModal.quantity" (ngModelChange)="calculateTotalPrice()">
+        </div>
+        <div class="mb-3">
+            <label for="id4" class="form-label">Discount</label>
+            <input type="text" class="form-control" id="id4" name="discount" [(ngModel)]="productModal.discount" (ngModelChange)="calculateTotalPrice()">
+        </div>
+        <div class="mb-3">
+            <label for="id4" class="form-label">Select Category</label>
+            <select  id="id4" class="w-100 mb-2" name="categoryName" [(ngModel)]="productModal.categoryName" (ngModelChange)="getSubCatgory()">
+                <option value="">Select</option>
+                <option *ngFor="let item of categoryArr" [value]="item">{{item}}</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="id5" class="form-label">Select Sub-Category</label>
+            <select name="subCatgoryNaem" id="id5" class="w-100 mb-2" [(ngModel)]="productModal.subCategroyName">
+                <option value="">Select</option>
+                <option *ngFor="let item of subCategoryArr" [value]="item">{{item}}</option>
+            </select>
+        </div>
+        
+        <p class="fs-6 fw-bold">Total Price of The Product Is : {{productModal.totalPrice}} </p>
+        <button type="submit" class="btn btn-primary mb-2" (click)="calculateTotalPrice()">Calculate</button>
+        <button type="button" class="btn btn-primary mb-2 ms-2" (click)="reset()">Reset</button>
+
+    </form>
+</div>

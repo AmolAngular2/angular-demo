@@ -1,0 +1,122 @@
+<h3 class="text-center">Directive Example</h3>
+<div class="container w-50">
+    <!-- <div class="mb-3" *ngIf="isShow">
+        <label for="id1" class="form-label">User Name</label>
+        <input type="text" class="form-control" id="id1" name="uName">
+    </div> -->
+
+    <!-- <button type="button" (click)="toggle()">Toggle</button> -->
+
+    <!-- <button class="btn btn-primary" *ngIf="isDisplay;else elseBlock">Login</button> -->
+    <!-- <button class="btn btn-secondary ms-2" *ngIf="!isDisplay">Sign Up</button> -->
+
+    <!-- <ng-template></ng-template> -->
+    <!-- <ng-template #elseBlock>
+        <button class="btn btn-secondary">Sign Up</button>
+    </ng-template> -->
+
+    <!-- 
+
+    <label for="" class="fw-bold">Contact Preference: </label>
+
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="Email"
+            [(ngModel)]="contactPreference">
+        <label class="form-check-label" for="flexRadioDefault1">
+            Email
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="Mobile"
+            [(ngModel)]="contactPreference">
+        <label class="form-check-label" for="flexRadioDefault2">
+            Mobile
+        </label>
+    </div> -->
+
+
+
+    <!-- using ngIf else block -->
+    <!-- <div class="mb-3" *ngIf="contactPreference == 'Mobile';else elseBlock">
+        <label for="id1" class="form-label">Mobile No</label>
+        <input type="text" class="form-control" id="id1" name="uName">
+    </div>
+    <ng-template #elseBlock>
+        <div class="mb-3">
+            <label for="id1" class="form-label">Email</label>
+            <input type="text" class="form-control" id="id1" name="uName">
+        </div>
+    </ng-template> -->
+
+    <!-- ngIf-then-else block -->
+    <!-- <p *ngIf="contactPreference == 'Mobile';then thenBlock;else elseBlock">
+        NgIf Then Else Block
+    </p>
+
+    <ng-template #thenBlock>
+        <div class="mb-3">
+            <label for="id1" class="form-label">Mobile</label>
+            <input type="text" class="form-control" id="id1" name="mobileNo">
+        </div>
+    </ng-template>
+
+    <ng-template #elseBlock>
+        <div class="mb-3">
+            <label for="id2" class="form-label">Email</label>
+            <input type="text" class="form-control" id="id2" name="emailId">
+        </div>
+    </ng-template> -->
+</div>
+
+<!-- <h3>List Of Courses</h3> -->
+<!-- <ul>
+    <li *ngFor="let course of coursesList;let i=index"> {{i+1}}-{{course}}</li>
+</ul> -->
+
+<!-- <ul>
+    <li *ngFor="let course of coursesList;let i=index;let o=odd"> {{i+1}}- <span>--{{o}}--{{course}}</span></li>
+</ul> -->
+
+<!-- <select name="" id="" class="w-25">
+    <option value="">Select</option>
+    <option *ngFor="let item of coursesList" [value]="item">{{item}}</option>
+</select> -->
+
+
+
+
+<div class="container w-50 mt-5">
+    <h5>ng Switch Example</h5>
+
+    <h5>Select Day</h5>
+    <select name="" id="" class="w-25 mb-2" [(ngModel)]="selectedDay">
+        <option value="">Select</option>
+        <option *ngFor="let item of weekdays" [value]="item">{{item}}</option>
+    </select>
+  
+   Selected Day: {{selectedDay}}
+
+   <!-- without switch  -->
+    <h6 *ngIf="selectedDay == 'Sunday'">Today is Sunday</h6>
+    <h6 *ngIf="selectedDay == 'Monday'">Today is Monday</h6>
+    <h6 *ngIf="selectedDay == 'Tuesday'">Today is Tuesday</h6>
+    <h6 *ngIf="selectedDay == 'Wednesday'">Today is Wednesday</h6>
+    <h6 *ngIf="selectedDay == 'Thursday'">Today is Thursday</h6>
+    <h6 *ngIf="selectedDay == 'Friday'">Today is Friday</h6>
+    <h6 *ngIf="selectedDay == 'Saturday'">Today is Saturday</h6>
+    <h6 *ngIf="selectedDay != 'Monday' && selectedDay != 'Sunday'">No Match Found</h6>
+
+
+ <!-- with ngSwitch -->
+
+   <div [ngSwitch]="selectedDay">
+       <h6 *ngSwitchCase="'Sunday'">Today is Sunday</h6>
+       <h6 *ngSwitchCase="'Monday'">Today is Monday</h6>
+       <h6 *ngSwitchCase="'Tuesday'">Today is Tuesday</h6>
+       <h6 *ngSwitchCase="'Wednesday'">Today is Wednesday</h6>
+       <h6 *ngSwitchCase="'Thursday'">Today is Thursday</h6>
+       <h6 *ngSwitchCase="'Friday'">Today is Friday</h6>
+       <h6 *ngSwitchCase="'Saturday'">Today is Saturday</h6>
+       <h6 *ngSwitchDefault>No Match Found</h6>
+   </div>
+</div>
