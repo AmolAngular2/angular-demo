@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'my-crud-app';
 
-  message:string="Welcome to Velocity";
+  message:string="Angular Development Course";
 
 
   
