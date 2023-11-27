@@ -10,6 +10,7 @@ export class AppComponent {
 
   message:string="Angular Development Course";
 
+   message1:string="Welcome to Velocity";
 
   
 
